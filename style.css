@@ -32,7 +32,8 @@ body{
 
 .container{
   position:absolute;
-  perspective:1000;
+  -webkit-perspective:1000;
+          perspective:1000;
   margin-top:-135px;
   top:50%;
 }
@@ -41,13 +42,20 @@ body{
   z-index: 100;
   position: relative;
   transition: 0.7s;
-  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.card.is-flipped {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
 }
 
 figure{
   background: #2e5d5a;
   color: #fff;
-  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   overflow: hidden;
   position: absolute;
   top: 0;
@@ -55,18 +63,21 @@ figure{
   text-align: center;
   cursor: pointer;
   transition: 0.6s;
-  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
   box-shadow: 0 1px 5px rgba(0,0,0,0.9);
 }
 
 figure.front{
-  transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
   z-index: 2;
 }
 
 figure.back,
 .card.flipped{
-  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
 }
 
 figure img{
@@ -84,7 +95,8 @@ figure .caption {
   height: 100%;
   text-transform: uppercase;
   padding: 2em;
-  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
 .front .caption{
@@ -100,13 +112,17 @@ figure .caption {
   background: linear-gradient(rgba(72,76,97,0) 0%, rgba(72,76,97,0.8) 75%);
   content: '';
   opacity: 0;
-  transform: translate3d(0,50%,0);
+  -webkit-transform: translate3d(0,50%,0);
+          transform: translate3d(0,50%,0);
+  transition: opacity 0.35s, -webkit-transform 0.35s;
   transition: opacity 0.35s, transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s, -webkit-transform 0.35s;
 }
 
 .front:hover .caption:before{
   opacity: 1;
-  transform: translate3d(0,0,0);
+  -webkit-transform: translate3d(0,0,0);
+          transform: translate3d(0,0,0);
 }
 
 .front h2{
@@ -118,8 +134,11 @@ figure .caption {
   left: 0;
   width: 100%;
   color: #272833;
+  transition: color 0.35s, -webkit-transform 0.35s;
   transition: transform 0.35s, color 0.35s;
-  transform: translate3d(0,-50%,0);
+  transition: transform 0.35s, color 0.35s, -webkit-transform 0.35s;
+  -webkit-transform: translate3d(0,-50%,0);
+          transform: translate3d(0,-50%,0);
 }
 
 .front h2 span {
@@ -134,8 +153,11 @@ figure .caption {
   height: 2px;
   background: #fff;
   content: '';
+  transition: -webkit-transform 0.35s;
   transition: transform 0.35s;
-  transform: translate3d(-130%,0,0);
+  transition: transform 0.35s, -webkit-transform 0.35s;
+  -webkit-transform: translate3d(-130%,0,0);
+          transform: translate3d(-130%,0,0);
 }
 
 .front:hover h2 {
@@ -145,7 +167,8 @@ figure .caption {
 }
 
 .front:hover h2:after {
-  transform: translate3d(0,0,0);
+  -webkit-transform: translate3d(0,0,0);
+          transform: translate3d(0,0,0);
 }
 
 .front p {
@@ -157,8 +180,11 @@ figure .caption {
   padding: 2em;
   width: 100%;
   opacity: 0;
-  transform: translate3d(0,10px,0);
+  -webkit-transform: translate3d(0,10px,0);
+          transform: translate3d(0,10px,0);
+  transition: opacity 0.35s, -webkit-transform 0.35s;
   transition: opacity 0.35s, transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s, -webkit-transform 0.35s;
 }
 
 .back .caption:before,
@@ -170,26 +196,31 @@ figure .caption {
   left: 30px;
   content: '';
   opacity: 0;
+  transition: opacity 0.45s, -webkit-transform 0.45s;
   transition: opacity 0.45s, transform 0.45s;
+  transition: opacity 0.45s, transform 0.45s, -webkit-transform 0.45s;
   transition-delay: 1s;
 }
 
 .back .caption:before{
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
-  transform: scale(0,1);
+  -webkit-transform: scale(0,1);
+          transform: scale(0,1);
 }
 
 .back .caption:after{
   border-right: 1px solid #fff;
   border-left: 1px solid #fff;
-  transform: scale(1,0);
+  -webkit-transform: scale(1,0);
+          transform: scale(1,0);
 }
 
 .card.flipped .back .caption:before,
 .card.flipped .back .caption:after {
   opacity: .9;
-  transform: scale(1);  
+  -webkit-transform: scale(1);
+          transform: scale(1);  
 }
 
 .back dl{
@@ -199,14 +230,18 @@ figure .caption {
   left:40px;
   position: absolute;
   opacity: 0;
+  transition: opacity .35s, -webkit-transform .35s;
   transition: opacity .35s, transform .35s;
+  transition: opacity .35s, transform .35s, -webkit-transform .35s;
   transition-delay: .85s;
-  transform: translate3d(-40px,0,0);
+  -webkit-transform: translate3d(-40px,0,0);
+          transform: translate3d(-40px,0,0);
 }
 
 .card.flipped .back dl {
   opacity: 1;
-  transform: translate3d(0,0,0);
+  -webkit-transform: translate3d(0,0,0);
+          transform: translate3d(0,0,0);
 }
 
 dl dt{
@@ -235,7 +270,8 @@ dl dd:after{
 
 .front:hover p {
   opacity: 1;
-  transform: translate3d(0,0,0);
+  -webkit-transform: translate3d(0,0,0);
+          transform: translate3d(0,0,0);
 }
 
 figure a{
