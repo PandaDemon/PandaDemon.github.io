@@ -1,5 +1,5 @@
 window.onload=function(){
-$('.card').click(function(){
-  $(this).toggleClass('flipped');
-});
+	$('.card').click(function(){
+	  $(this).toggleClass('flipped');
+	});
 }
