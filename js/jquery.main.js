@@ -12,9 +12,9 @@ jQuery(function() {
 
 
 function initScrollToTop() {
-	jQuery('.to-top').click(function() {
+	jQuery('.scroll-to').click(function() {
 		jQuery('body,html').animate({
-			scrollTop : 0
+			scrollTop :jQuery(jQuery(this).attr('href')).offset().top,
 		}, 800);
 	});
 }
