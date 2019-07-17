@@ -1196,8 +1196,10 @@ a {
     background-color: #000; }
 
 .logo a {
-  display: block;
-  font-size: 24px; }
+  display: block; }
+  @media (min-width: 1024px) {
+    .logo a {
+      font-size: 24px; } }
 
 .logo img {
   width: 160px;
@@ -1676,24 +1678,23 @@ cite {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  list-style: none;
   margin: 0 -15px;
-  padding-top: 21px; }
+  padding-top: 21px;
+  padding-left: 0; }
   @media (min-width: 768px) {
     .partners-list {
       margin-left: -35px;
       margin-right: -35px; } }
   .partners-list .item {
-    width: 50%;
+    width: calc(100% / 3);
     padding: 0 15px 15px; }
-    @media (min-width: 480px) {
-      .partners-list .item {
-        width: calc(100% / 3); } }
     @media (min-width: 768px) {
       .partners-list .item {
-        width: 25%; } }
+        width: calc(100% / 5); } }
     @media (min-width: 1024px) {
       .partners-list .item {
-        width: calc(100% / 6);
+        width: calc(100% / 5);
         padding-left: 35px;
         padding-right: 35px; } }
     .partners-list .item a {
@@ -1702,7 +1703,10 @@ cite {
         opacity: .7; }
     .partners-list .item img {
       width: auto;
-      height: 83px; }
+      height: 55px; }
+      @media (min-width: 768px) {
+        .partners-list .item img {
+          height: 83px; } }
 
 @media (min-width: 768px) {
   .flex-holder {
@@ -1889,9 +1893,6 @@ cite {
 .info {
   font-size: 15px;
   padding: 40px 0; }
-  @media (min-width: 1024px) {
-    .info {
-      padding: 88px 0 196px; } }
   .info h2 {
     margin-bottom: 30px; }
     @media (min-width: 1024px) {

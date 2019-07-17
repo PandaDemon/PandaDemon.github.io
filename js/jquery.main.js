@@ -7,7 +7,17 @@ jQuery(function() {
 	initSlickCarousel();
 	initCustomPopup();
 	initInViewport();
+	initScrollToTop();
 });
+
+
+function initScrollToTop() {
+	jQuery('.to-top').click(function() {
+		jQuery('body,html').animate({
+			scrollTop : 0
+		}, 800);
+	});
+}
 
 function initRetinaCover() {
 	jQuery('.bg-stretch').retinaCover();
