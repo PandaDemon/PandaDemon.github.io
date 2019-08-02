@@ -1853,9 +1853,9 @@ cite {
         width: calc(100% / 3);
         padding-right: 20px;
         padding-left: 20px; } }
-  .impact-list .number {
+  .impact-list .title {
     color: #e94a35;
-    font-size: 57px;
+    font-size: 23px;
     font-weight: 700;
     padding-right: 9px; }
   .impact-list .heading {
@@ -3092,7 +3092,7 @@ input {
   padding: 40px 0; }
   @media (min-width: 1024px) {
     .footer {
-      padding: 69px 0 130px; } }
+      padding: 69px 0 0; } }
   .footer h4, .footer h5 {
     color: #fff; }
   .footer h4 {
